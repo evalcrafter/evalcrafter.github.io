@@ -5,29 +5,17 @@
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
   <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
 
-
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
   <!-- Keywords for your paper to be indexed by-->
   <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
+  <title>EvalCrafter</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
+
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
@@ -37,11 +25,16 @@
   href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
+
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
   <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
@@ -55,26 +48,76 @@
 </head>
 <body>
 
+<style type="text/css">
 
-  <section class="hero">
+.header{
+  position: relative;
+  color: white;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+}
+
+.header a{
+  color:white;
+}
+
+</style>
+
+<section class="hero">
+
+  <div class="video-wrapper header">
+
+    <div class="bg-overlay"></div>
+      <video playsinline autoplay muted loop poster="cake.jpg">
+      <source src="static/videos/v1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="xtitle is-1 publication-title">Academic Project Page</h1>
+          <div class="column has-text-centered publication-infos">
+            <img width="400px" src="static/images/logo.png">
+            <h1 class="xtitle is-1 publication-title">Benchmarking and Evaluating High-Quality Text-to-Video Models</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup></span>
+                <a href="#" target="_blank">Yaofang Liu</a><sup>1,2,*</sup></span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup></span>
+                  <a href="http://vinthony.github.io" target="_blank">Xiaodong Cun</a><sup>2,*</sup>
+                </span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="https://sunbowliu.github.io/" target="_blank">Xuebo Liu</a><sup>3</sup></span>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://xinntao.github.io/" target="_blank">Xintao Wang</a><sup>2</sup></span>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://yzhang2016.github.io/" target="_blank">Yong Zhang</a><sup>2</sup></span>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=6UPJSvwAAAAJ&hl=zh-CN" target="_blank">Haoxin Chen</a><sup>2</sup></span><br/>
+                  </span>
+                  <span class="author-block">
+                    <a href="#" target="_blank">Yang Liu</a><sup>4</sup></span>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://www.math.cuhk.edu.hk/~zeng/" target="_blank">Tieyong Zeng</a><sup>4</sup></span>
+                  </span>
+                   <span class="author-block">
+                    <a href="https://scholars.cityu.edu.hk/en/persons/hon-fu-raymond-chan(98f1cf10-a01a-4642-8470-c48b0e977687).html" target="_blank">Raymond Chan</a><sup>2</sup></span>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=zh-CN" target="_blank">Ying Shan</a><sup>1</sup></span>
                   </span>
                   </div>
-
+                  <br>
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
+                    <span class="author-block">
+                      <sup>1</sup> Tencent AI Lab &nbsp;&nbsp;&nbsp;
+                      <sup>2</sup> City University of Hong Kong &nbsp;&nbsp;&nbsp; <br>
+                      <sup>3</sup> University of Macau &nbsp;&nbsp;&nbsp; 
+                      <sup>4</sup> The Chinese University of Hong Kong <br>
+                      <br><b style="color:#eb002a">Technical Report</b></span>
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div>
 
@@ -91,25 +134,14 @@
                       </a>
                     </span>
 
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link ">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/EvalCrafter/EvalCrafter" target="_blank"
                     class="external-link ">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Code</span>
+                    <span> Code & Findings </span>
                   </a>
                 </span>
 
@@ -129,211 +161,440 @@
       </div>
     </div>
   </div>
+
+</div>
+
 </section>
 
+<br>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-<div class="marquee-wrapper">
-	<div class="container">
-		<div class="marquee-block">
-			<div class="marquee-inner to-left">
-				<span>
-					<div class="marquee-item">
-            <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-						<p class="text-white">1</p>
-					</div>
-					<div class="marquee-item">
-            <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-						<p class="text-white">2</p>
-					</div>
-					<div class="marquee-item">
-            <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-						<p class="text-white">3</p>
-					</div>
-					<div class="marquee-item">
-            <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-						<p class="text-white">4</p>
-					</div>
-					<div class="marquee-item">
-            <img src="static/images/carousel5.jpg" alt="MY ALT TEXT"/>
-						<p class="text-white">5</p>
-					</div>
-				</span>
-				<span>
-					<div class="marquee-item">
-            <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-						<p class="text-white">1</p>
-					</div>
-					<div class="marquee-item">
-            <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-						<p class="text-white">2</p>
-					</div>
-					<div class="marquee-item">
-            <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-						<p class="text-white">3</p>
-					</div>
-					<div class="marquee-item">
-            <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-						<p class="text-white">4</p>
-					</div>
-					<div class="marquee-item">
-            <img src="static/images/carousel5.jpg" alt="MY ALT TEXT"/>
-						<p class="text-white">5</p>
-					</div>
-				</span>
-			</div>
-		</div>
-
-  </div>
-</section>
-
-<!-- Teaser video-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
+  <h2 class="title is-3">Leaderboard</h2>
+	 <table class="table" id="mainTable" data-order='[[ 5, "dsc" ]]' >
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Motion Quality</th>
+      <th scope="col">Text-Video Alignment</th>
+      <th scope="col">Visual Quality </th>
+      <th scope="col">Temporal Consistency</th>
+      <th scope="col" data-class-name="priority" >Final Sum Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><a href='https://www.pika.art/'>Pika Lab <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M11 4H4v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5M9 15L20 4m-5 0h5v5"/></svg></a></th>
+      <td>57.94</td>
+      <td>63.52</td>
+      <td>63.99</td>
+      <td>68.79</td>
+      <td>318</td>
+    </tr>
+    <tr>
+      <th scope="row"><a href='http://floor33.tech/'>Floor33 Pictures <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M11 4H4v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5M9 15L20 4m-5 0h5v5"/></svg></a></th>
+      <td>50.36</td>
+      <td>60.83</td>
+      <td>58.99</td>
+      <td>57.68</td>
+      <td>285</td>
+    </tr>
+    <tr>
+      <th scope="row"> <a href='https://modelscope.cn/models/damo/Image-to-Video/summary'>Modelscope-XL <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M11 4H4v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5M9 15L20 4m-5 0h5v5"/></svg></a> </th>
+      <td>58.02</td>
+      <td>56.80</td>
+      <td>55.77</td>
+      <td>60.81</td>
+      <td>289</td>
+    </tr>
+    <tr>
+      <th scope="row"> <a href='https://huggingface.co/cerspense'>Zeroscope <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M11 4H4v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5M9 15L20 4m-5 0h5v5"/></svg></a> </th>
+      <td>52.97</td>
+      <td>55.42</td>
+      <td>54.59</td>
+      <td>61.01</td>
+      <td>280</td>
+    </tr>
+     <tr>
+      <th scope="row"> <a href='https://research.runwayml.com/gen2'>Gen2 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M11 4H4v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5M9 15L20 4m-5 0h5v5"/></svg></a> </th>
+      <td>62.05</td>
+      <td>63.11</td>
+      <td>68.05</td>
+      <td>69.05</td>
+      <td>328</td>
+    </tr>
+
+
+  </tbody>
+</table>	
+      More Methods (<a href='https://moonvalley.ai/'>Moonvalley <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M11 4H4v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5M9 15L20 4m-5 0h5v5"/></svg></a>, &nbsp;
+      <a href='https://www.morphstudio.xyz/'>Morph Studio <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M11 4H4v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5M9 15L20 4m-5 0h5v5"/></svg></a>, &nbsp; 
+     <a href='https://www.genmo.ai/'>Genmo.AI <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M11 4H4v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5M9 15L20 4m-5 0h5v5"/></svg></a>, &nbsp;
+     <a href='https://github.com/hotshotco/Hotshot-XL'> HotShot-XL <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M11 4H4v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5M9 15L20 4m-5 0h5v5"/></svg></a>, &nbsp;
+      <a href='https://github.com/showlab/Show-1'> Show-1 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M11 4H4v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5M9 15L20 4m-5 0h5v5"/></svg></a> ) will be evalcrafted soon !
+    <p> Stay tunning. Join our evaluation by sending an <a href="mailto:vinthony@gmail.com">Email</a> to obtain the prompt list!</i> </p>
+  </div>
   </div>
 </section>
-<!-- End teaser video -->
+<hr>
+
 
 <!-- Paper abstract -->
-<section class="section hero is-light">
+<section class="section hero">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">Overall Pipeline</h2>
         <div class="content has-text-justified">
+          <img src="static/images/overallpipeline.png">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
+            The vision and language generative models have been overgrown in recent years. For video generation, various open-sourced models and public-available services are released for generating high-visual quality videos. However, these methods often use out-of-fashion academic metrics, \eg, FVD or IS, to evaluate the models' performance. We argue that it is hard to judge the large conditional generative models from the simple metrics since these models are often trained on very large datasets with multi-aspect abilities. 
+Thus, we propose a new framework and pipeline to exhaustively evaluate the performance of the generated videos. To achieve this, we first conduct a new prompt list for text-to-video generation by analyzing the real-world prompt list with the help of the large language model. 
+Then, we evaluate the state-of-the-art text-to-video generative models on our carefully designed benchmarks, in terms of visual qualities, content qualities, motion qualities, and text-caption alignment with around 18 objective metrics. To obtain the final leaderboard of the models, we also conduct 5 subjective studies from the aspective of motion quality, text-video alignment, temporal consistency, visual quality, and user favor, where we can align the objective metrics to the users' opinions and get the final ranking. Based on the proposed opinion alignment method, our method can successfully align the objective metrics to the subjective ones and show the effectiveness of the proposed evaluation metrics.
+                      </p>
+        </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+<hr>
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3">Internal Information</h2>
+      <div class='columns is-centered'>
+        <table class="table" id="intTable" >
+          <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Version</th>
+            <th scope="col">Abilities</th>
+            <th scope="col">Resolution</th>
+            <th scope="col">fps</th>
+            <th scope="col">Open Source</th>
+            <th scope="col">Length</th>
+            <th scope="col">Generation Speed</th>
+            <th scope="col">Motion Control</th>
+            <th scope="col">Camera Control</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="col">ModelScope</th>
+            <th scope="col">23.03</th>
+            <th scope="col">T2V</th>
+            <th scope="col">256x256</th>
+            <th scope="col">8</th>
+            <th scope="col">✅</th>
+            <th scope="col">4s</th>
+            <th scope="col">0.5min</th>
+            <th scope="col">-</th>
+            <th scope="col">-</th>
+          </tr>
+          <tr>
+            <th scope="col">VideoCrafter</th>
+            <th scope="col">23.04</th>
+            <th scope="col">T2V</th>
+            <th scope="col">256x256</th>
+            <th scope="col">8</th>
+            <th scope="col">✅</th>
+            <th scope="col">2s</th>
+            <th scope="col">0.5min</th>
+            <th scope="col">-</th>
+            <th scope="col">-</th>
+          </tr>
+          <tr>
+            <th scope="col">ZeroScope</th>
+            <th scope="col">23.06</th>
+            <th scope="col">T2V & V2V</th>
+            <th scope="col">1024x576</th>
+            <th scope="col">8</th>
+            <th scope="col">✅</th>
+            <th scope="col">4s</th>
+            <th scope="col">3min</th>
+            <th scope="col">-</th>
+            <th scope="col">-</th>
+          </tr>
+          <tr>
+            <th scope="col">ModelScope-XL</th>
+            <th scope="col">23.08</th>
+            <th scope="col">I2V & V2V</th>
+            <th scope="col">1280x720</th>
+            <th scope="col">8</th>
+            <th scope="col">✅</th>
+            <th scope="col">4s</th>
+            <th scope="col">8min+</th>
+            <th scope="col">-</th>
+            <th scope="col">-</th>
+          </tr>
+          <tr>
+            <th scope="col">Floor33(VideoCrafter-v0.9)</th>
+            <th scope="col">23.08</th>
+            <th scope="col">T2V</th>
+            <th scope="col">1280x720</th>
+            <th scope="col">8</th>
+            <th scope="col">-</th>
+            <th scope="col">2s</th>
+            <th scope="col">4min</th>
+            <th scope="col">-</th>
+            <th scope="col">-</th>
+          </tr>
+          <tr>
+            <th scope="col">PikaLab</th>
+            <th scope="col">23.09</th>
+            <th scope="col">T2V OR I2V</th>
+            <th scope="col">1088x640</th>
+            <th scope="col">24</th>
+            <th scope="col">-</th>
+            <th scope="col">3s</th>
+            <th scope="col">1min</th>
+            <th scope="col">✅</th>
+            <th scope="col">✅</th>
+          </tr>
+          <tr>
+            <th scope="col">Gen2</th>
+            <th scope="col">23.09</th>
+            <th scope="col">T2V OR I2V</th>
+            <th scope="col">896x512</th>
+            <th scope="col">24</th>
+            <th scope="col">-</th>
+            <th scope="col">4s</th>
+            <th scope="col">1min</th>
+            <th scope="col">✅</th>
+            <th scope="col">✅</th>
+          </tr>
+        </tbody>
+        </table>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
     </div>
-  </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
+<hr>
+<!--End BibTex citation -->
+<!-- 
+VQA_A,0.9772,0.9595,0.9811,0.9932,0.9904
+VQA_T,0.0609,0.065,0.076,0.0869,0.1013
+VQA,0.5293,0.5136,0.6368,0.6738,0.6872
+_IS,0.1599,0.1335,0.151,0.1366,0.1257
+clip_img,0.997207967,0.998371946,0.995792591,0.999731314,0.999265339
+warping_error,0.7304,0.8032,0.6977,0.6688,0.5819
+id_consistency,0.9889,0.9933,0.9905,0.9964,0.9906
+action_recognition,0.7375,0.7174,0.7448,0.6984,0.5499
+amp_classification,0.2667,0.5333,0.6,0.4,0.4
+average_flow,0.0228,0.0166,0.0223,0.0011,0.0018
+clip_score,0.2062,0.202,0.2115,0.2072,0.209
+clip_text_score,0.2242,0.212,0.2367,0.2189,0.2233
+sd_score,0.685,0.6779,0.6904,0.6914,0.6931
+object_det,0.4959,0.458,0.55,0.5049,0.5
+object_color,0.401,0.4635,0.3507,0.3657,0.3229
+object_count,0.4767,0.4788,0.5763,0.5646,0.5719
+text_recognition_score,0.837381941,0.825784831,0.8109005,0.813325832,0.929404156
+face_verification_score,0.4566,0.4596,0.4524,0.4343,0.4458 -->
 
 
 
+<!--BibTex citation -->
+  <section class="section">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3">Raw Metrics</h2>
+      <div class='columns is-centered'>
+        <table class="table" id="RawTable" >
+          <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">VQA_A</th>
+            <th scope="col">VQA_T</th>
+            <th scope="col">IS</th>
+            <th scope="col">CLIP Temp</th>
+            <th scope="col">Warping Error</th>
+            <th scope="col">Id Consistency</th>
+            <th scope="col">Action Recognition</th>
+            <th scope="col">Amp class</th>
+            <th scope="col">Average Flow</th>
+            <th scope="col">clip Score</th>
+            <th scope="col">clip Text Score</th>
+            <th scope="col">SD Score</th>
+            <th scope="col">Object Det</th>
+            <th scope="col">Object Color</th>
+            <th scope="col">Object Count</th>
+            <th scope="col">Text Recognition</th>
+            <th scope="col">Face Verification</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="col">ModelScope</th>
+            <th scope="col">0.9772</th>
+            <th scope="col">0.0609</th>
+            <th scope="col">0.1599</th>
+            <th scope="col">0.9972</th>
+            <th scope="col">0.7304</th>
+            <th scope="col">0.9889</th>
+            <th scope="col">0.73375</th>
+            <th scope="col">0.2667</th>
+            <th scope="col">0.0228</th>
+            <th scope="col">0.2062</th>
+            <th scope="col">0.2242</th>
+            <th scope="col">0.685</th>
+            <th scope="col">0.4959</th>
+            <th scope="col">0.401</th>
+            <th scope="col">0.4767</th>
+            <th scope="col">0.8374</th>
+            <th scope="col">0.4566</th>
+          </tr>
+          <tr>
+            <th scope="col">ZeroScope</th>
+            <th scope="col">0.9595</th>
+            <th scope="col">0.065</th>
+            <th scope="col">0.1335</th>
+            <th scope="col">0.9984</th>
+            <th scope="col">0.8032</th>
+            <th scope="col">0.9933</th>
+            <th scope="col">0.7174</th>
+            <th scope="col">0.5333</th>
+            <th scope="col">0.0223</th>
+            <th scope="col">0.202</th>
+            <th scope="col">0.212</th>
+            <th scope="col">0.6904</th>
+            <th scope="col">0.458</th>
+            <th scope="col">0.4635</th>
+            <th scope="col">0.4788</th>
+            <th scope="col">0.8258</th>
+            <th scope="col">0.4596</th>
+          </tr>
+          <tr>
+            <th scope="col">Floor33</th>
+            <th scope="col">0.9811</th>
+            <th scope="col">0.076</th>
+            <th scope="col">0.151</th>
+            <th scope="col">0.9984</th>
+            <th scope="col">0.6977</th>
+            <th scope="col">0.9905</th>
+            <th scope="col">0.7448</th>
+            <th scope="col">0.6</th>
+            <th scope="col">0.0223</th>
+            <th scope="col">0.2115</th>
+            <th scope="col">0.2367</th>
+            <th scope="col">0.6904</th>
+            <th scope="col">0.55</th>
+            <th scope="col">0.3507</th>
+            <th scope="col">0.5763</th>
+            <th scope="col">0.8109</th>
+            <th scope="col">0.4524</th>
+          </tr>
+          <tr>
+            <th scope="col">PiKaLab</th>
+            <th scope="col">0.9932</th>
+            <th scope="col">0.0869</th>
+            <th scope="col">0.1366</th>
+            <th scope="col">0.9997</th>
+            <th scope="col">0.6688</th>
+            <th scope="col">0.9964</th>
+            <th scope="col">0.6984</th>
+            <th scope="col">0.4</th>
+            <th scope="col">0.0011</th>
+            <th scope="col">0.2072</th>
+            <th scope="col">0.2189</th>
+            <th scope="col">0.6914</th>
+            <th scope="col">0.5049</th>
+            <th scope="col">0.3657</th>
+            <th scope="col">0.5646</th>
+            <th scope="col">0.8133</th>
+            <th scope="col">0.4343</th>
+          </tr>
+           <tr>
+            <th scope="col">Gen2</th>
+            <th scope="col">0.9904</th>
+            <th scope="col">0.1013</th>
+            <th scope="col">0.1257</th>
+            <th scope="col">0.9992</th>
+            <th scope="col">0.5819</th>
+            <th scope="col">0.9964</th>
+            <th scope="col">0.5499</th>
+            <th scope="col">0.4</th>
+            <th scope="col">0.0018</th>
+            <th scope="col">0.209</th>
+            <th scope="col">0.2233</th>
+            <th scope="col">0.6931</th>
+            <th scope="col">0.5</th>
+            <th scope="col">0.3229</th>
+            <th scope="col">0.5719</th>
+            <th scope="col">0.9294</th>
+            <th scope="col">0.4458</th>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+      <p> A larger value indicate a better performance in nearly all the metrics. <br>Lower Warping Error means the better. <br>Amp Class means the motion amplitude classification score, which is only for reference. </p>
+    </div>
+</section>
+<hr>
 
 <!-- Youtube video -->
-<section class="hero is-small is-light">
+<section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
+      <h2 class="title is-3">Pre-Type Results (Average)</h2>
+        <div class="column" style="height: 1000; position: relative;">
+           <img src="static/images/meta.png">  
         </div>
-      </div>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
+<hr>
 
-
-<!-- Video carousel -->
+<!-- Youtube video -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
+      <h2 class="title is-3"> Raw User Studies results </h2>
+        <div class="column" style="height: 500px; position: relative; text-align: center;">
+          <img width='500px' src="static/images/user study.png">  
         </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
+    </div>
+  </div>
+</section>
+<hr>
+<!-- End youtube video -->
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3">Benchmark Information</h2>
+      <div class='columns is-centered'>
+        <img style='width:60%' src='static/images/metainfo.png'>      
+      </div>
+    </div>
+</section>
+<hr>
+<!--End BibTex citation -->
+
+<!-- Youtube video 
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. 
+      <h2 class="title is-3">Subjective Findings</h2>
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h4 class="findings">Finding #1: Different model has different abilities in different meta types. <a href='https://github.com/evalcrafter/evalcrafter/blob/master/findings/finding1.md'> <br>[Read More Details >>]</a></h4><br>
+          <h4 class="findings">Finding #2: The text-video alignment is less important in video generation for users. <a href='https://github.com/evalcrafter/evalcrafter/blob/master/findings/finding2.md'><br>[Read More Details >>]</a></h4><br>
+          <h4 class="findings">Finding #3: All the methods CAN NOT control their camera motion directly from the text prompt. <a href='https://github.com/evalcrafter/evalcrafter/blob/master/findings/finding3.md'><br>[Read More Details >>]</a></h4><br>
+          <h4 class="findings">Finding #4: Visually appealing has no positive correlation with the training resolutions. <a href='https://github.com/evalcrafter/evalcrafter/blob/master/findings/finding4.md'><br>[Read More Details >>]</a></h4><br>
+          <img style="float:right" width='250px' src='static/images/tobecontinue.png'>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End video carousel -->
-
-
-<!-- Paper poster 
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-End paper poster -->
-
+End youtube video -->
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
@@ -350,7 +611,6 @@ End paper poster -->
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-
           <p>
             This page was built using the <a href="https://github.com/vinthony/project-page-template">modification version</a> of <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> from <a href="https://github.com/vinthony">vinthony</a>.
             You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
@@ -362,6 +622,27 @@ End paper poster -->
     </div>
   </div>
 </footer>
+
+<script type="text/javascript">
+  let table = new DataTable('#mainTable',{
+    paging: false,
+    searching: false,
+    info: false
+  });
+
+    let table2 = new DataTable('#intTable',{
+    paging: false,
+    searching: false,
+    info: false
+  });
+    let table3 = new DataTable('#RawTable',{
+    paging: false,
+    searching: false,
+    info: false
+  });
+</script>
+
+<script type="text/javascript" src='static/js/radar.js'></script>
 
 <!-- Statcounter tracking code -->
   
